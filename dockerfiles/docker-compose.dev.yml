@@ -1,0 +1,23 @@
+version: "3.8"
+services:
+  backend:
+    extends:
+      file: docker-compose.yml
+      service: backend
+    build:
+      target: development
+    env_file: ../playground/.env
+    volumes:
+      - ../:/app
+      
+  database:
+    extends:
+      file: docker-compose.yml
+      service: database
+    container_name: database
+    volumes:
+      - /projects/postgres:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DATABASE: playground
+      POSGRES_USERNAME: postgres
+      POSTGRES_PASSWORD: postgres

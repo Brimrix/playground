@@ -1,0 +1,21 @@
+[project]
+name = "Playground"
+version = "v1.0"
+description = ""
+authors = [
+    {name = "Waqar Ali", email = "waqar_se@outlook.com"},
+]
+requires-python = ">=3.10"
+dependencies = [
+    "django>=5.0",
+    "dj-database-url>=2.1.0",
+    "python-environ>=0.4.54",
+    "psycopg2>=2.9.9",
+]
+readme = "README.md"
+license = {text = "MIT"}
+
+[project.optional-dependencies]
+test = [
+    "factory-boy>=3.3.0",
+]
